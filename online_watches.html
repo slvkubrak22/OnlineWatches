@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="online_watches.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <div class="watches">
+    <div class="display">
+      
+    </div>
+  </div>
+
+  <script>
+    setInterval(function() {
+      const clock = document.querySelector(".display");
+      let time = new Date();
+      // clock.textContent = time;
+      let sec = time.getSeconds();
+      let min = time.getMinutes();
+      let hour = time.getHours();
+      let day = "am";
+      if (hour > 12) {
+           day = "pm"
+           hour -= 12;
+      }
+      if (hour == 0) {
+           hour = 12;
+      }
+      if (sec < 10) {
+           sec = "0" + sec;
+      }
+      if (min < 10) {
+           min = "0" + min;
+      }
+      if (hour < 10) {
+           hour = "0" + hour;
+      }
+      
+      clock.textContent = hour + ":" + min + ":" + sec + ` ${day}`;
+  
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!-- https://www.youtube.com/watch?v=CP2V4tN8kYI -->
